@@ -1,0 +1,139 @@
+/*
+ * DASHBOARD STYLES
+ * Este arquivo ESTENDE o framework principal.
+ */
+
+/* PASSO 1: Importa todo o nosso framework base */
+@import url('style.css');
+
+/* PASSO 2: Estilos específicos para a página da dashboard */
+
+body {
+    /* Um fundo um pouco mais escuro para destacar os cards brancos */
+    background-color: var(--color-background-gray);
+}
+
+.dashboard-layout {
+    display: grid;
+    /* Define o layout de 2 colunas: uma sidebar fixa e o conteúdo principal flexível */
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+/* --- Estilos da Barra Lateral --- */
+.dashboard-sidebar {
+    background-color: var(--color-graphite);
+    color: var(--color-light-gray);
+    padding: var(--spacing-4);
+    /* Faz a sidebar ficar fixa no lugar durante a rolagem */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebar-header h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-5);
+}
+
+.dashboard-nav .nav-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-medium-gray);
+    margin-top: var(--spacing-4);
+    margin-bottom: var(--spacing-2);
+}
+
+.dashboard-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 6px;
+    color: var(--color-light-gray);
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.dashboard-nav a:hover {
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+}
+.dashboard-nav a.active {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-weight: 600;
+}
+.dashboard-nav a svg {
+    /* Garante que o ícone herde a cor do link */
+    stroke: currentColor;
+}
+
+
+/* --- Estilos do Conteúdo Principal --- */
+.dashboard-main {
+    padding: var(--spacing-5);
+}
+
+.main-header-bar {
+    margin-bottom: var(--spacing-5);
+}
+
+/* --- Estilos para os Cards Suaves --- */
+.card {
+    /* Sobrescreve a sombra padrão para ser mais suave */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+    /* Borda muito sutil */
+    border: 1px solid #f0f0f0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.status-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+.status-card-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.status-card-icon svg {
+    stroke: var(--color-dark-gray);
+}
+.status-card-content h2 {
+    /* Títulos dentro dos cards não precisam da tipografia fluida */
+    font-size: 2rem;
+}
+
+
+/* --- Responsividade para a Dashboard --- */
+@media (max-width: 1024px) {
+    .dashboard-layout {
+        /* Em telas menores, o layout vira uma coluna só */
+        grid-template-columns: 1fr;
+    }
+    .dashboard-sidebar {
+        /* A sidebar deixa de ser fixa e se comporta como um header normal */
+        position: static;
+        height: auto;
+    }
+}

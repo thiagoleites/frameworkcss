@@ -1,0 +1,1213 @@
+/* ---------------------------------- */
+/*      VARIÁVEIS GLOBAIS (CORES)     */
+/* ---------------------------------- */
+:root {
+    --color-dark: #111111;
+    --color-graphite: #222222;
+    --color-dark-gray: #333333;
+    --color-medium-gray: #999999;
+    --color-light-gray: #cccccc;
+    --color-border-gray: #dddddd;
+    --color-background-gray: #f3f3f3;
+    --color-background: #f9f9f9;
+    --color-white: #ffffff;
+
+    --color-success: #28a745;
+    --color-error: #dc3545;
+    --color-info: #17a2b8;
+
+    /* ...outras variáveis... */
+    --spacing-1: 0.25rem; /* 4px */
+    --spacing-2: 0.5rem;  /* 8px */
+    --spacing-3: 1rem;    /* 16px */
+    --spacing-4: 1.5rem;  /* 24px */
+    --spacing-5: 2rem;    /* 32px */
+    --spacing-6: 3rem;    /* 48px */
+    
+    color-scheme: light dark;
+    background-color: var(--color-background);
+    color: var(--color-dark);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-dark: #e0e0e0;
+        --color-graphite: #bbbbbb;
+        --color-dark-gray: #999999;
+        --color-medium-gray: #666666;
+        --color-light-gray: #444444;
+        --color-border-gray: #555555;
+        --color-background-gray: #222222;
+        --color-background: #121212;
+        --color-white: #000000;
+
+        --color-success: #4caf50;
+        --color-error: #f44336;
+        --color-info: #2196f3;
+    }
+}
+
+/* ---------------------------------- */
+/*          CSS RESET & GERAL         */
+/* ---------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-background);
+/*     color: var(--color-graphite); */
+    color: var(--color-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--color-border-gray);
+    margin: 40px 0;
+}
+
+
+/* --- UTILITÁRIOS DE ESPAÇAMENTO --- */
+/* m = margin, p = padding */
+/* t=top, b=bottom, s=start(left), e=end(right), x=eixo X, y=eixo Y */
+.mt-1 { margin-top: var(--spacing-1); }
+.mb-1 { margin-bottom: var(--spacing-1); }
+.ms-1 { margin-left: var(--spacing-1); }
+.me-1 { margin-right: var(--spacing-1); }
+.mx-1 { margin-left: var(--spacing-1); margin-right: var(--spacing-1); }
+.my-1 { margin-top: var(--spacing-1); margin-bottom: var(--spacing-1); }
+
+/* Repita para os outros valores (2, 3, 4, 5, 6) */
+.mt-3 { margin-top: var(--spacing-3); }
+.mb-3 { margin-bottom: var(--spacing-3); }
+/* ... e assim por diante para margin e padding */
+
+.p-2 { padding: var(--spacing-2); }
+.pt-2 { padding-top: var(--spacing-2); }
+.pb-2 { padding-bottom: var(--spacing-2); }
+/* ... etc. */
+
+
+/* --- UTILITÁRIOS DE CORES --- */
+.bg-dark { background-color: var(--color-dark); }
+.bg-white { background-color: var(--color-white); }
+.bg-light-gray { background-color: var(--color-background-gray); }
+
+.text-white { color: var(--color-white); }
+.text-dark-gray { color: var(--color-dark-gray); }
+
+/* ---------------------------------- */
+/*              1. TÍTULOS            */
+/* ---------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; } */
+
+h1 { font-size: clamp(2rem, 1.62rem + 1.9vw, 3rem); font-weight: 800; } /* Cresce de 32px a 48px */
+h2 { font-size: clamp(1.75rem, 1.49rem + 1.29vw, 2.5rem); font-weight: 700; } /* Cresce de 28px a 40px */
+h3 { font-size: clamp(1.5rem, 1.32rem + 0.9vw, 2rem); } /* Cresce de 24px a 32px */
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* ---------------------------------- */
+/*          2. PARÁGRAFOS E LINKS     */
+/* ---------------------------------- */
+p {
+    margin-bottom: 1rem;
+    max-width: 75ch; /* Limita largura para melhor legibilidade */
+}
+
+a {
+    color: var(--color-dark-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-dark);
+    text-decoration: underline;
+}
+
+/* ---------------------------------- */
+/*              3. BOTÕES             */
+/* ---------------------------------- */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-graphite);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    border: 1px solid var(--color-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-background-gray);
+    border-color: var(--color-graphite);
+}
+
+.btn:disabled {
+    background-color: var(--color-light-gray);
+    color: var(--color-medium-gray);
+    cursor: not-allowed;
+}
+
+
+/* ---------------------------------- */
+/*             4. FORMULÁRIOS         */
+/* ---------------------------------- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--color-dark-gray);
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    /*padding: 12px;  padding padrão de 12px, testando outros valores */
+    padding: 14px;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--color-graphite);
+    background-color: var(--color-white);
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover,
+select:hover {
+    border-color: var(--color-medium-gray);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--color-dark);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------- */
+/*       5. IMAGENS E THUMBNAILS      */
+/* ---------------------------------- */
+.image-gallery {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.img-rounded {
+    border-radius: 8px;
+}
+
+.img-shadow {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid var(--color-border-gray);
+    border-radius: 50%; /* Thumbnail circular */
+}
+
+/* ---------------------------------- */
+/*        6. CARDS / CONTAINERS       */
+/* ---------------------------------- */
+.card {
+    background-color: var(--color-white);
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    max-width: 400px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card h5 {
+    color: var(--color-medium-gray);
+    font-weight: 400;
+}
+
+.card .btn {
+    margin-top: 1rem;
+}
+
+/* ---------------------------------- */
+/*              7. TABELAS            */
+/* ---------------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid var(--color-border-gray);
+}
+
+thead {
+    background-color: var(--color-background-gray);
+}
+
+thead th {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--color-background);
+}
+
+/* ---------------------------------- */
+/*              8. LISTAS             */
+/* ---------------------------------- */
+.list-container {
+    display: flex;
+    gap: 40px;
+}
+ul, ol {
+    padding-left: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 0.75rem;
+}
+
+ul li::marker {
+    color: var(--color-dark);
+}
+
+/* ---------------------------------- */
+/*        9. BADGES E ALERTAS         */
+/* ---------------------------------- */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 12px;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    margin-right: 8px;
+    margin-top: 1rem;
+}
+
+.alerts-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.alert {
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    border-left-width: 5px;
+}
+
+.alert-success {
+    background-color: #f0fff4;
+    border-color: var(--color-success);
+    color: #1c7430;
+}
+
+.alert-error {
+    background-color: #fff5f5;
+    border-color: var(--color-error);
+    color: #a71d2a;
+}
+
+.alert-info {
+    background-color: #f1faff;
+    border-color: var(--color-info);
+    color: #0c5460;
+}
+
+/* ---------------------------------- */
+/*      ESTRUTURA: HEADER E FOOTER    */
+/* ---------------------------------- */
+.main-header, .main-footer {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border-gray);
+    padding: 0 20px; /* Remove padding vertical para o container controlar */
+}
+
+.main-header .container, .main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    text-decoration: none;
+}
+.logo:hover {
+    text-decoration: none;
+}
+
+.main-nav a {
+    margin-left: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.main-footer {
+    border-top: 1px solid var(--color-border-gray);
+    border-bottom: none;
+    margin-top: 40px;
+    color: var(--color-dark-gray);
+}
+
+.main-footer p {
+    margin: 0;
+}
+
+.footer-links a {
+    margin-left: 15px;
+    color: var(--color-dark-gray);
+}
+
+
+/* ---------------------------------- */
+/*    10. CHECKBOXES E RADIOS         */
+/* ---------------------------------- */
+.form-group-inline {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+.custom-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.custom-control input[type="checkbox"],
+.custom-control input[type="radio"] {
+    display: none; /* Esconde o input original */
+}
+
+.custom-control label {
+    position: relative;
+    padding-left: 30px; /* Espaço para o controle customizado */
+    cursor: pointer;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+/* Cria o pseudo-elemento que será o nosso controle */
+.custom-control label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-medium-gray);
+    background-color: var(--color-white);
+    transition: all 0.2s ease;
+}
+
+/* Estilo para checkbox e radio */
+input[type="checkbox"] + label::before { border-radius: 4px; }
+input[type="radio"] + label::before { border-radius: 50%; }
+
+/* Estilo do marcador (check ou círculo) */
+.custom-control label::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Começa invisível */
+    background-color: var(--color-white);
+    transition: transform 0.2s ease;
+}
+
+/* Marcador do checkbox */
+input[type="checkbox"] + label::after {
+    left: 6px;
+    top: 7px;
+    width: 9px;
+    height: 9px;
+    border: solid var(--color-white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+}
+/* Marcador do rádio */
+input[type="radio"] + label::after {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+}
+
+/* Quando o input está marcado (checked) */
+input:checked + label::before {
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+}
+input:checked + label::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+/* Ajuste para o marcador do checkbox */
+input[type="checkbox"]:checked + label::after {
+    transform: rotate(45deg) scale(1);
+}
+
+/* ---------------------------------- */
+/*          11. BLOCO DE CÓDIGO       */
+/* ---------------------------------- */
+pre {
+    background-color: var(--color-graphite);
+    color: #f8f8f2; /* Cor de texto comum para temas escuros */
+    border: 1px solid var(--color-dark-gray);
+    border-radius: 6px;
+    padding: 20px;
+    overflow-x: auto; /* Para rolagem horizontal se o código for largo */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+}
+
+code {
+    font-family: inherit;
+    color: inherit;
+    display: block;
+}
+
+/* ---------------------------------- */
+/*            12. PAGINAÇÃO           */
+/* ---------------------------------- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2rem;
+}
+
+.page-link {
+    display: block;
+    padding: 8px 16px;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 6px;
+    color: var(--color-dark-gray);
+    background-color: var(--color-white);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.page-link:hover {
+    border-color: var(--color-medium-gray);
+    background-color: var(--color-background-gray);
+    text-decoration: none;
+}
+
+.page-link.active {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border-color: var(--color-dark);
+    font-weight: 600;
+}
+
+.page-link.ellipsis {
+    border: none;
+    background: none;
+}
+
+/* ---------------------------------- */
+/*      13. MODAL (VERSÃO APRIMORADA) */
+/* ---------------------------------- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* O truque para o efeito de vidro fosco */
+    background-color: rgba(255, 255, 255, 0.5); /* Fundo branco semi-transparente */
+    -webkit-backdrop-filter: blur(8px); /* Para Safari */
+    backdrop-filter: blur(8px); /* Efeito de desfoque */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Transições para o aparecimento suave */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Estado ativo do modal (seria controlado por JS) */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--color-white);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Borda sutil */
+    width: 90%;
+    max-width: 500px;
+    
+    /* Animação de "pop-up" */
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header,
+.modal-footer {
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-background); /* Fundo cinza para hierarquia */
+}
+
+.modal-header {
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border-gray);
+    border-radius: 12px 12px 0 0;
+}
+.modal-header h3 { 
+    margin: 0; 
+    font-size: 1.25rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--color-dark-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.modal-close:hover { 
+    background-color: var(--color-border-gray);
+    color: var(--color-dark); 
+}
+
+.modal-body {
+    padding: 32px 24px; /* Mais espaço vertical */
+}
+.modal-body p:last-child {
+    margin-bottom: 0;
+}
+
+.modal-footer {
+    justify-content: flex-end;
+    gap: 12px;
+    border-top: 1px solid var(--color-border-gray);
+    border-radius: 0 0 12px 12px;
+}
+.modal-footer .btn { 
+    margin: 0; 
+}
+
+/* ---------------------------------- */
+/*              14. TABS              */
+/* ---------------------------------- */
+.tabs { margin-top: 1.5rem; }
+
+.tab-nav {
+    display: flex;
+    border-bottom: 1px solid var(--color-border-gray);
+}
+
+.tab-link {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-dark-gray);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px; /* Alinha a borda inferior com a borda do container */
+    transition: all 0.2s ease;
+}
+.tab-link:hover {
+    background-color: var(--color-background);
+}
+.tab-link.active {
+    color: var(--color-dark);
+    border-bottom-color: var(--color-dark);
+    font-weight: 600;
+}
+
+.tab-content {
+    padding: 24px 0;
+}
+.tab-pane {
+    display: none;
+}
+.tab-pane.active {
+    display: block;
+}
+
+/* ---------------------------------- */
+/*            15. ACCORDION           */
+/* ---------------------------------- */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.accordion details {
+    border: 1px solid var(--color-border-gray);
+    border-radius: 6px;
+    background-color: var(--color-white);
+}
+.accordion summary {
+    padding: 16px;
+    font-weight: 600;
+    color: var(--color-dark);
+    cursor: pointer;
+    list-style: none; /* Remove o marcador padrão */
+    position: relative;
+    padding-right: 40px;
+}
+.accordion summary::-webkit-details-marker { display: none; } /* Para Chrome/Safari */
+
+/* Ícone de seta customizado */
+.accordion summary::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-dark-gray);
+    transition: transform 0.2s ease;
+}
+.accordion details[open] summary::after {
+    content: '−';
+}
+
+.accordion-content {
+    padding: 0 16px 16px;
+    border-top: 1px solid var(--color-border-gray);
+}
+.accordion-content p { margin-bottom: 0; }
+
+
+/* ---------------------------------- */
+/* 16. TOOLTIP, SPINNER, PROGRESS BAR */
+/* ---------------------------------- */
+.feedback-components, .media-components {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+/* Tooltip */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%; /* Posição acima do elemento */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-graphite);
+    color: var(--color-white);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Spinner */
+.spinner, .spinner-sm {
+    border: 4px solid var(--color-background-gray);
+    border-top-color: var(--color-dark);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+.spinner { width: 40px; height: 40px; }
+.spinner-sm { width: 24px; height: 24px; border-width: 3px; }
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 12px;
+    background-color: var(--color-background-gray);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    background-color: var(--color-dark);
+    border-radius: 6px;
+    /* transition: width 0.4s ease; */
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+    opacity: 0;
+}
+
+
+/* ---------------------------------- */
+/*        17. SKELETON SCREEN         */
+/* ---------------------------------- */
+.skeleton {
+    cursor: progress;
+}
+.skeleton-line {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+.skeleton-title { width: 60%; height: 28px; margin-bottom: 1rem; }
+.skeleton-subtitle { width: 40%; height: 20px; margin-bottom: 1.5rem; }
+.skeleton-text { width: 100%; height: 16px; margin-bottom: 0.75rem; }
+.skeleton-text:last-of-type { width: 80%; }
+.skeleton-button { width: 120px; height: 45px; margin-top: 1.5rem; }
+
+@keyframes pulse {
+    0% { background-color: #e0e0e0; }
+    50% { background-color: #f0f0f0; }
+    100% { background-color: #e0e0e0; }
+}
+
+
+/* ---------------------------------- */
+/*   18. AVATARS & BLOCKQUOTE         */
+/* ---------------------------------- */
+.avatar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-border-gray);
+}
+.avatar-lg { width: 96px; height: 96px; }
+.avatar-sm { width: 40px; height: 40px; }
+
+/* Status online */
+.avatar-status-wrapper {
+    position: relative;
+    display: inline-block;
+}
+.avatar-status-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-success);
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+}
+
+/* Blockquote */
+blockquote {
+    margin: 0;
+    padding-left: 20px;
+    border-left: 4px solid var(--color-dark);
+}
+blockquote p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-dark-gray);
+}
+blockquote footer {
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--color-dark);
+}
+
+/* ---------------------------------- */
+/*        19. SEÇÃO DE COMENTÁRIOS    */
+/* ---------------------------------- */
+
+/* Formulário para novo comentário */
+.comment-form {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+}
+.comment-input-area {
+    flex: 1;
+}
+.comment-input-area textarea {
+    margin-bottom: 0.75rem;
+    min-height: 80px;
+}
+.comment-input-area button {
+    float: right; /* Alinha o botão à direita */
+}
+
+/* Lista de comentários */
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.comment-thread {
+    /* Cada comentário principal é um "fio" */
+}
+
+.comment {
+    display: flex;
+    gap: 16px; /* Espaço entre o avatar e o corpo do comentário */
+    align-items: flex-start;
+}
+.comment-body {
+    flex: 1;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.comment-author {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.comment-timestamp {
+    font-size: 0.85rem;
+    color: var(--color-dark-gray);
+}
+
+.comment-text {
+    margin: 0;
+    color: var(--color-graphite);
+    line-height: 1.6;
+}
+
+.comment-actions {
+    margin-top: 0.75rem;
+}
+
+.comment-actions a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-dark-gray);
+    text-decoration: none;
+}
+.comment-actions a:hover {
+    color: var(--color-dark);
+}
+
+/* Estilo das respostas aninhadas */
+.comment-replies {
+    margin-top: 1.5rem;
+    /* Recuo para alinhar com o corpo do comentário pai */
+    margin-left: 60px;
+    padding-left: 20px;
+    /* A linha que conecta visualmente as respostas */
+    border-left: 2px solid var(--color-border-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ---------------------------------- */
+/*    20. BOTÃO DE CURTIR COMENTÁRIO  */
+/* ---------------------------------- */
+
+.comment-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Aumenta o espaço entre os botões */
+}
+
+.like-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: 1px solid transparent; /* Borda invisível para manter o tamanho no hover */
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--color-dark-gray);
+    transition: all 0.2s ease;
+}
+
+.like-button:hover {
+    background-color: var(--color-background);
+    border-color: var(--color-border-gray);
+    color: var(--color-dark);
+}
+
+.like-button svg {
+    /* Cor padrão do ícone */
+    fill: none;
+    stroke: var(--color-dark-gray);
+    transition: all 0.2s ease;
+}
+
+.like-button:hover svg {
+    stroke: var(--color-dark);
+}
+
+.like-count {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --- ESTADO ATIVO (QUANDO CURTIDO) --- */
+.like-button.liked {
+    color: var(--color-dark);
+}
+
+.like-button.liked svg {
+    /* Cor do ícone quando curtido */
+    fill: var(--color-dark);
+    stroke: var(--color-dark);
+}
+
+/* ---------------------------------- */
+/*       21. GRID LAYOUT SYSTEM       */
+/* ---------------------------------- */
+
+/* O container principal do Grid */
+.grid-layout {
+    display: grid;
+    /* Cria 12 colunas, cada uma ocupando uma fração igual do espaço disponível */
+    grid-template-columns: repeat(12, 1fr); 
+    /* Define o espaçamento (gutter) entre as colunas e linhas */
+    gap: 24px; 
+}
+
+/* 
+  Classes de utilidade para definir quantas colunas um item deve ocupar.
+  Usamos `grid-column: span X;` que é mais flexível e moderno.
+*/
+.col-span-1 { grid-column: span 1 / span 1; }
+.col-span-2 { grid-column: span 2 / span 2; }
+.col-span-3 { grid-column: span 3 / span 3; }
+.col-span-4 { grid-column: span 4 / span 4; }
+.col-span-5 { grid-column: span 5 / span 5; }
+.col-span-6 { grid-column: span 6 / span 6; }
+.col-span-7 { grid-column: span 7 / span 7; }
+.col-span-8 { grid-column: span 8 / span 8; }
+.col-span-9 { grid-column: span 9 / span 9; }
+.col-span-10 { grid-column: span 10 / span 10; }
+.col-span-11 { grid-column: span 11 / span 11; }
+.col-span-12 { grid-column: span 12 / span 12; }
+
+/* 
+  OPCIONAL, MAS RECOMENDADO: Grid Responsivo (Mobile-First)
+  Por padrão, tudo é uma coluna só. As classes abaixo se aplicam a telas maiores.
+*/
+
+/* Telas Médias (tablets, etc.) - a partir de 768px */
+@media (min-width: 768px) {
+    .md\:col-span-1 { grid-column: span 1 / span 1; }
+    .md\:col-span-2 { grid-column: span 2 / span 2; }
+    .md\:col-span-3 { grid-column: span 3 / span 3; }
+    .md\:col-span-4 { grid-column: span 4 / span 4; }
+    .md\:col-span-6 { grid-column: span 6 / span 6; }
+    .md\:col-span-8 { grid-column: span 8 / span 8; }
+    .md\:col-span-12 { grid-column: span 12 / span 12; }
+}
+
+/* Telas Grandes (desktops) - a partir de 1024px */
+@media (min-width: 1024px) {
+    .lg\:col-span-1 { grid-column: span 1 / span 1; }
+    .lg\:col-span-2 { grid-column: span 2 / span 2; }
+    .lg\:col-span-3 { grid-column: span 3 / span 3; }
+    .lg\:col-span-4 { grid-column: span 4 / span 4; }
+    .lg\:col-span-6 { grid-column: span 6 / span 6; }
+    .lg\:col-span-8 { grid-column: span 8 / span 8; }
+    .lg\:col-span-12 { grid-column: span 12 / span 12; }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/*       22. DEMONSTRAÇÃO DO GRID     */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Estilos para a seção de demonstração */
+.grid-demo h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border-gray);
+    font-size: 1.25rem;
+}
+
+/* Estilo dos blocos/colunas de exemplo */
+.demo-col {
+    background-color: var(--color-graphite); /* Fundo escuro para destaque */
+    color: var(--color-white);
+    padding: 16px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* --- UTILITÁRIOS DE ACESSIBILIDADE --- */
+
+/* Estilo de foco aprimorado e visível apenas para teclado */
+*:focus-visible {
+    outline: 3px solid var(--color-dark);
+    outline-offset: 2px;
+    border-radius: 4px; /* Opcional, para suavizar o contorno */
+}
+
+/* Esconde visualmente, mas mantém acessível para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Ocultar elementos visuais, mas manter acessível para leitores de tela */
+.hidden {
+    display: none !important;;
+}
+
+#btnEnviar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* overlay para spinner na página */
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}

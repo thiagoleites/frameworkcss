@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Base - Tema Claro com Componentes Escuros</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Over lay para spinner na página -->
+     <!-- <div class="loading-overlay hidden" id="pageLoader">
+        <div class="spinner"></div>
+     </div> -->
+
+<!-- <div class="container hidden" id="mainContent"> -->
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">Logo</a>
+            <nav class="main-nav">
+                <a href="#">Início</a>
+                <a href="#">Sobre</a>
+                <a href="#">Serviços</a>
+                <a href="#">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. Títulos -->
+        <section>
+            <h1>Título Principal (h1)</h1>
+            <p>Este é o título principal da página, usado para o tópico mais importante.</p>
+            <h2>Subtítulo (h2)</h2>
+            <p>Um subtítulo para seções importantes, com destaque menor que o h1.</p>
+            <h3>Tópico de Seção (h3)</h3>
+            <p>Usado para agrupar conteúdos relacionados dentro de uma seção.</p>
+            <h4>Tópico Menor (h4)</h4>
+            <p>Para subdivisões ou ênfase em pontos específicos.</p>
+            <h5>Subtítulo de Detalhe (h5)</h5>
+            <p>Ideal para legendas ou descrições curtas.</p>
+            <h6>Nota de Rodapé (h6)</h6>
+            <p>Usado para informações de menor relevância ou notas.</p>
+        </section>
+
+        <hr>
+
+        <!-- 2. Parágrafos e Links -->
+        <section>
+            <h2>Parágrafos e Links</h2>
+            <p>Este é um parágrafo padrão, com espaçamento e altura de linha confortáveis para garantir uma boa legibilidade. Ele contém um <a href="#">link de exemplo</a>, que se destaca sutilmente do texto. Ao passar o mouse, o <a href="#">link escurece</a> para fornecer feedback visual. A ideia é manter um design limpo e funcional.</p>
+        </section>
+
+        <hr>
+
+        <!-- 3. Botões -->
+        <section>
+            <h2>Botões</h2>
+            <button class="btn btn-primary">Botão Primário</button>
+            <button class="btn btn-secondary">Botão Secundário</button>
+            <button class="btn" disabled>Botão Desabilitado</button>
+        </section>
+        
+        <hr>
+        
+        <!-- 4. Formulários -->
+        <section>
+            <h2>Formulários</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="seu.email@exemplo.com">
+                </div>
+                <div class="form-group">
+                    <label for="options">Opções</label>
+                    <select id="options">
+                        <option>Selecione uma opção</option>
+                        <option>Opção 1</option>
+                        <option>Opção 2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" rows="4" placeholder="Deixe sua mensagem aqui..."></textarea>
+                </div>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- 5. Imagens e Thumbnails -->
+        <section>
+            <h2>Imagens e Thumbnails</h2>
+            <div class="image-gallery">
+                <img src="https://placehold.co/200x150" alt="Placeholder de Imagem" class="img-rounded img-shadow">
+                <img src="https://placehold.co/200x150" alt="Placeholder de Imagem" class="img-rounded">
+                <img src="https://placehold.co/100x100" alt="Thumbnail de Imagem" class="thumbnail">
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 6. Cards / Containers -->
+        <section>
+            <h2>Cards e Containers</h2>
+            <div class="card">
+                <h3>Título do Card</h3>
+                <h5>Subtítulo ou descrição curta</h5>
+                <p>Corpo de texto do card, onde você pode detalhar informações importantes. O design é limpo e o conteúdo é o foco principal.</p>
+                <button class="btn btn-primary">Ação do Card</button>
+            </div>
+        </section>
+        
+        <hr>
+
+        <!-- 7. Tabelas -->
+        <section>
+            <h2>Tabelas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Produto</th>
+                        <th>Status</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Produto A</td>
+                        <td>Ativo</td>
+                        <td>R$ 99,90</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Produto B</td>
+                        <td>Em estoque</td>
+                        <td>R$ 49,50</td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Produto C</td>
+                        <td>Esgotado</td>
+                        <td>R$ 199,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- 8. Listas -->
+        <section>
+            <h2>Listas</h2>
+            <div class="list-container">
+                <div>
+                    <h4>Lista Não Ordenada</h4>
+                    <ul>
+                        <li>Item um da lista</li>
+                        <li>Item dois com mais conteúdo</li>
+                        <li>Item três, simples e direto</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Lista Ordenada</h4>
+                    <ol>
+                        <li>Primeiro passo</li>
+                        <li>Segundo passo</li>
+                        <li>Terceiro passo</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 9. Badges e Alertas -->
+        <section>
+            <h2>Badges e Alertas</h2>
+            <div>
+                <span class="badge">Badge Padrão</span>
+                <span class="badge">Novo</span>
+                <span class="badge">Em Destaque</span>
+            </div>
+            <div class="alerts-container">
+                <div class="alert alert-success">
+                    <strong>Sucesso!</strong> Sua operação foi concluída.
+                </div>
+                <div class="alert alert-error">
+                    <strong>Erro!</strong> Não foi possível salvar as alterações.
+                </div>
+                <div class="alert alert-info">
+                    <strong>Informação:</strong> Este sistema será atualizado em breve.
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        
+        <!-- 10. Checkboxes e Rádios Estilizados -->
+        <section>
+            <h2>Checkboxes e Rádios</h2>
+            <div class="form-group-inline">
+                <div class="custom-control">
+                    <input type="checkbox" id="check1" checked>
+                    <label for="check1">Checkbox marcado</label>
+                </div>
+                <div class="custom-control">
+                    <input type="checkbox" id="check2">
+                    <label for="check2">Checkbox desmarcado</label>
+                </div>
+            </div>
+             <div class="form-group-inline">
+                <div class="custom-control">
+                    <input type="radio" id="radio1" name="options-radio" checked>
+                    <label for="radio1">Opção de rádio 1</label>
+                </div>
+                <div class="custom-control">
+                    <input type="radio" id="radio2" name="options-radio">
+                    <label for="radio2">Opção de rádio 2</label>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+          <!-- 11. Bloco de Código -->
+        <section>
+            <h2>Bloco de Código</h2>
+            <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="en"&gt;
+                &lt;head&gt;
+                    &lt;title class="val"&gt;Exemplo de Código&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Olá Mundo!&lt;/h1&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+        </section>
+
+        <hr>
+
+        <!-- 12. Paginação -->
+        <section>
+            <h2>Paginação</h2>
+            <nav class="pagination">
+                <a href="#" class="page-link prev">Anterior</a>
+                <a href="#" class="page-link">1</a>
+                <a href="#" class="page-link active">2</a>
+                <a href="#" class="page-link">3</a>
+                <span class="page-link ellipsis">...</span>
+                <a href="#" class="page-link">10</a>
+                <a href="#" class="page-link next">Próximo</a>
+            </nav>
+        </section>
+
+        <!-- --------------------------- -->
+
+        <hr>
+        
+        <!-- NOVO: Modal Aprimorado -->
+        <section>
+            <h2>Modal Aprimorado (Versão 2.0)</h2>
+            <p>Esta versão inclui melhor hierarquia, animação mais dinâmica e um efeito de fundo "vidro fosco" para um visual mais moderno.</p>
+            <button class="btn btn-primary" onclick="document.querySelector('.modal-overlay').classList.add('active')">Abrir Modal</button>
+            
+            <!-- O ideal é que o modal comece escondido. Adicionei a classe .active aqui APENAS para demonstração visual. -->
+            <div class="modal-overlay">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Confirmar Ação</h3>
+                        <button class="modal-close" title="Fechar" onclick="document.querySelector('.modal-overlay').classList.remove('active')">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Tem certeza de que deseja prosseguir com esta ação? Esta operação não poderá ser desfeita.</p>
+                        <p>Todos os dados associados serão permanentemente removidos.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" onclick="document.querySelector('.modal-overlay').classList.remove('active')">Cancelar</button>
+                        <button class="btn btn-primary" onclick="document.querySelector('.modal-overlay').classList.remove('active')">Sim, prosseguir</button>
+                        <button class="modal-close"><span class="sr-only">Fechar Modal</span>&times;</button> <!-- exemplo a ser seguiodo para acessibilidade -->
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <!-- --------------------------------------------->
+            <!-- NOVO HTML para a Seção de Tabs -->
+        <section>
+            <h2>Tabs / Abas</h2>
+            <div class="tabs">
+                <div class="tab-nav">
+                    <!-- Adicionamos data-tab="1" -->
+                    <button class="tab-link active" data-tab="1">Aba 1</button>
+                    <!-- Adicionamos data-tab="2" -->
+                    <button class="tab-link" data-tab="2">Aba 2</button>
+                    <!-- Adicionamos data-tab="3" -->
+                    <button class="tab-link" data-tab="3">Aba 3</button>
+                </div>
+                <div class="tab-content">
+                    <!-- Adicionamos data-tab="1" -->
+                    <div class="tab-pane active" data-tab="1">
+                        <h4>Conteúdo da Aba 1</h4>
+                        <p>Este é o painel de conteúdo para a primeira aba. Cada aba exibe um conteúdo diferente no mesmo espaço.</p>
+                    </div>
+                    <!-- Adicionamos data-tab="2" -->
+                    <div class="tab-pane" data-tab="2">
+                        <h4>Conteúdo da Aba 2</h4>
+                        <p>Conteúdo da segunda aba. Agora a troca de conteúdo é controlada por JavaScript.</p>
+                    </div>
+                    <!-- Adicionamos data-tab="3" -->
+                    <div class="tab-pane" data-tab="3">
+                        <h4>Conteúdo da Aba 3</h4>
+                        <p>E finalmente, o conteúdo da terceira aba, totalmente funcional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <hr>
+
+        <!-- NOVO: Accordion / Sanfona (usando <details> para não precisar de JS) -->
+        <section>
+            <h2>Accordion / Sanfona</h2>
+            <div class="accordion">
+                <details>
+                    <summary>Item 1: Como funciona?</summary>
+                    <div class="accordion-content">
+                        <p>Este componente usa as tags <strong><details></strong> e <strong><summary></strong> do HTML5, permitindo que ele funcione sem a necessidade de JavaScript.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Item 2: É customizável?</summary>
+                    <div class="accordion-content">
+                        <p>Sim. O ícone de seta e todas as cores são definidos via CSS e podem ser facilmente alterados.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Item 3: Qual a vantagem?</summary>
+                    <div class="accordion-content">
+                        <p>A principal vantagem é a acessibilidade e a leveza, pois não depende de scripts externos para sua funcionalidade básica.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- NOVO: Tooltip, Spinner e Progress Bar -->
+        <section>
+            <h2>Componentes de Feedback</h2>
+            <div class="feedback-components">
+                <div>
+                    <h4>Tooltip (Puro CSS)</h4>
+                    <button class="btn btn-secondary" data-tooltip="Esta é uma dica útil!">Passe o mouse aqui</button>
+                </div>
+                <div>
+                    <h4>Spinners / Loaders</h4>
+                    <div class="spinner"></div>
+                    <div class="spinner-sm"></div>
+                </div>
+                <div>
+                    <h4>Barra de Progresso</h4>
+                    <div class="progress-container">
+                        <!-- <div class="progress-bar" style="width: 75%;"></div> -->
+                        <div class="progress-bar" data-progress="75"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- NOVO: Skeleton Screen -->
+        <section>
+            <h2>Skeleton Screen / Tela de Esqueleto</h2>
+            <p>Usado como um placeholder enquanto o conteúdo real está sendo carregado.</p>
+            <div class="card skeleton">
+                <div class="skeleton-line skeleton-title"></div>
+                <div class="skeleton-line skeleton-subtitle"></div>
+                <div class="skeleton-line skeleton-text"></div>
+                <div class="skeleton-line skeleton-text"></div>
+                <div class="skeleton-line skeleton-button"></div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <!-- NOVO: Avatares e Bloco de Citação -->
+        <section>
+            <h2>Conteúdo e Mídia</h2>
+            <div class="media-components">
+                <div>
+                    <h4>Avatares</h4>
+                    <div class="avatar-container">
+                        <img src="https://placehold.co/150" alt="Avatar" class="avatar avatar-lg">
+                        <img src="https://placehold.co/150" alt="Avatar" class="avatar">
+                        <img src="https://placehold.co/150" alt="Avatar" class="avatar avatar-sm">
+                        <div class="avatar-status-wrapper">
+                            <img src="https://placehold.co/150" alt="Avatar com status" class="avatar">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4>Bloco de Citação</h4>
+                    <blockquote>
+                        <p>"O design não é apenas o que parece e o que se sente. O design é como funciona."</p>
+                        <footer>— <cite>Steve Jobs</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- NOVO: Seção de Comentários -->
+        <section>
+            <h2>Comentários (3)</h2>
+
+            <!-- Formulário para adicionar um novo comentário -->
+            <div class="comment-form">
+                <img src="https://placehold.co/150" alt="Seu Avatar" class="avatar avatar-sm">
+                <div class="comment-input-area">
+                    <textarea placeholder="Adicione um comentário..." rows="3"></textarea>
+                    <button class="btn btn-primary">Publicar</button>
+                </div>
+            </div>
+
+            <!-- Lista de comentários existentes -->
+            <div class="comment-list">
+                
+                <!-- Comentário #1 (com uma resposta) -->
+                <div class="comment-thread">
+                    <div class="comment">
+                        <img src="https://placehold.co/150" alt="Avatar de Ana" class="avatar avatar-sm">
+                        <div class="comment-body">
+                            <div class="comment-header">
+                                <span class="comment-author">Ana Silva</span>
+                                <span class="comment-timestamp">2 dias atrás</span>
+                            </div>
+                            <p class="comment-text">Ótimo artigo! A base de componentes está ficando realmente completa e fácil de usar.</p>
+                            <div class="comment-actions">
+                                <!-- NOVO BOTÃO DE CURTIR -->
+                                <button class="like-button">
+                                    <!-- Ícone SVG de "Joinha" -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M7 10v12"/>
+                                        <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h3z"/>
+                                    </svg>
+                                    <span class="like-count">12</span>
+                                </button>
+                                <a href="#">Responder</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Respostas a este comentário -->
+                    <div class="comment-replies">
+                        <div class="comment">
+                            <img src="https://placehold.co/150" alt="Avatar de Bruno" class="avatar avatar-sm">
+                            <div class="comment-body">
+                                <div class="comment-header">
+                                    <span class="comment-author">Bruno Costa</span>
+                                    <span class="comment-timestamp">1 dia atrás</span>
+                                </div>
+                                <p class="comment-text">Concordo! O estilo escuro nos componentes dá um toque muito profissional.</p>
+                                <div class="comment-actions">
+                                    <!-- NOVO BOTÃO DE CURTIR -->
+                                    <button class="like-button">
+                                        <!-- Ícone SVG de "Joinha" -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M7 10v12"/>
+                                            <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h3z"/>
+                                        </svg>
+                                        <span class="like-count">12</span>
+                                    </button>
+                                    <a href="#">Responder</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comentário #2 (sem respostas) -->
+                <div class="comment-thread">
+                    <div class="comment">
+                        <img src="https://placehold.co/150" alt="Avatar de Carla" class="avatar avatar-sm">
+                        <div class="comment-body">
+                            <div class="comment-header">
+                                <span class="comment-author">Carla Martins</span>
+                                <span class="comment-timestamp">5 horas atrás</span>
+                            </div>
+                            <p class="comment-text">Alguém tem uma sugestão de como integrar isso com React ou Vue?</p>
+                            <div class="comment-actions">
+                                <!-- NOVO BOTÃO DE CURTIR -->
+                                <button class="like-button">
+                                    <!-- Ícone SVG de "Joinha" -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M7 10v12"/>
+                                        <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h3z"/>
+                                    </svg>
+                                    <span class="like-count">12</span>
+                                </button>
+                                <a href="#">Responder</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Galeria de Produtos</h2>
+            <!-- O container dos cards se torna o nosso grid layout -->
+            <div class="grid-layout">
+                <!-- 
+                    Em telas pequenas, cada card ocupa 12 colunas (largura total).
+                    Em telas médias, cada card ocupa 6 colunas (2 por linha).
+                    Em telas grandes, cada card ocupa 4 colunas (3 por linha).
+                -->
+                <div class="card col-span-12 md:col-span-6 lg:col-span-4">
+                    <!-- Conteúdo do Card 1 -->
+                </div>
+                <div class="card col-span-12 md:col-span-6 lg:col-span-4">
+                    <!-- Conteúdo do Card 2 -->
+                </div>
+                <div class="card col-span-12 md:col-span-6 lg:col-span-4">
+                    <!-- Conteúdo do Card 3 -->
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        
+        <main class="grid-layout">
+            <!-- Em telas pequenas, o conteúdo vem primeiro (ocupa 12 colunas) -->
+            <!-- Em telas grandes, o conteúdo ocupa 8 de 12 colunas -->
+            <div class="col-span-12 lg:col-span-8">
+                <h1>Título do Conteúdo Principal</h1>
+                <p>Texto do conteúdo...</p>
+            </div>
+            
+            <!-- Em telas pequenas, a sidebar vem depois (ocupa 12 colunas) -->
+            <!-- Em telas grandes, a sidebar ocupa 4 de 12 colunas -->
+            <aside class="col-span-12 lg:col-span-4">
+                <h3>Barra Lateral</h3>
+                <p>Links e outras informações.</p>
+            </aside>
+        </main>
+
+        <hr>
+
+        <!-- NOVO: Seção de Demonstração Visual do Grid -->
+        <section class="grid-demo">
+            <h2>Demonstração do Sistema de Grid</h2>
+            <p>Abaixo estão exemplos visuais de como as classes de coluna (`col-span-*`) se comportam dentro de um container com a classe <code>.grid-layout</code>.</p>
+
+            <!-- Exemplo: 1 Coluna -->
+            <h3>1 Coluna (span 12)</h3>
+            <div class="grid-layout">
+                <div class="demo-col col-span-12">.col-span-12</div>
+            </div>
+
+            <!-- Exemplo: 2 Colunas -->
+            <h3>2 Colunas (span 6)</h3>
+            <div class="grid-layout">
+                <div class="demo-col col-span-6">.col-span-6</div>
+                <div class="demo-col col-span-6">.col-span-6</div>
+            </div>
+
+            <!-- Exemplo: 3 Colunas -->
+            <h3>3 Colunas (span 4)</h3>
+            <div class="grid-layout">
+                <div class="demo-col col-span-4">.col-span-4</div>
+                <div class="demo-col col-span-4">.col-span-4</div>
+                <div class="demo-col col-span-4">.col-span-4</div>
+            </div>
+
+            <!-- Exemplo: 4 Colunas -->
+            <h3>4 Colunas (span 3)</h3>
+            <div class="grid-layout">
+                <div class="demo-col col-span-3">.col-span-3</div>
+                <div class="demo-col col-span-3">.col-span-3</div>
+                <div class="demo-col col-span-3">.col-span-3</div>
+                <div class="demo-col col-span-3">.col-span-3</div>
+            </div>
+            
+            <!-- Exemplo: 6 Colunas -->
+            <h3>6 Colunas (span 2)</h3>
+            <div class="grid-layout">
+                <div class="demo-col col-span-2">.col-span-2</div>
+                <div class="demo-col col-span-2">.col-span-2</div>
+                <div class="demo-col col-span-2">.col-span-2</div>
+                <div class="demo-col col-span-2">.col-span-2</div>
+                <div class="demo-col col-span-2">.col-span-2</div>
+                <div class="demo-col col-span-2">.col-span-2</div>
+            </div>
+
+            <!-- Exemplo: 12 Colunas -->
+            <h3>12 Colunas (span 1)</h3>
+            <div class="grid-layout">
+                <div class="demo-col col-span-1">1</div>
+                <div class="demo-col col-span-1">2</div>
+                <div class="demo-col col-span-1">3</div>
+                <div class="demo-col col-span-1">4</div>
+                <div class="demo-col col-span-1">5</div>
+                <div class="demo-col col-span-1">6</div>
+                <div class="demo-col col-span-1">7</div>
+                <div class="demo-col col-span-1">8</div>
+                <div class="demo-col col-span-1">9</div>
+                <div class="demo-col col-span-1">10</div>
+                <div class="demo-col col-span-1">11</div>
+                <div class="demo-col col-span-1">12</div>
+            </div>
+            
+            <!-- Exemplo: Layout Misto -->
+            <h3>Layout Misto (Ex: 8 + 4)</h3>
+            <div class="grid-layout">
+                <div class="demo-col col-span-8">.col-span-8 (Conteúdo Principal)</div>
+                <div class="demo-col col-span-4">.col-span-4 (Sidebar)</div>
+            </div>
+            
+        </section>
+
+        <hr>
+
+        <section>
+            <form id="meuFormulario">
+                <div class="form-group">
+                    <label for="nomeUsuario">Nome</label>
+                    <input type="text" id="nomeUsuario" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" id="btnEnviar">
+                        <span>Enviar Formulário</span>
+                        <!-- Nosso spinner, escondido por padrão -->
+                        <div class="spinner-sm hidden" id="spinnerForm"></div>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 Seu Nome ou Empresa. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+<!-- </div> -->
+<script src="./jquery.js"></script>
+<script>
+    // Este evento garante que o script só será executado depois que todo o HTML for carregado.
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Lógica para os Tabs
+    const tabsContainer = document.querySelector('.tabs');
+
+    // Só executa o código se houver um container de tabs na página
+    if (tabsContainer) {
+        const tabNav = tabsContainer.querySelector('.tab-nav');
+        const tabPanes = tabsContainer.querySelectorAll('.tab-pane');
+
+        // Adiciona um "ouvinte" de cliques na área de navegação das abas
+        tabNav.addEventListener('click', (event) => {
+            const clickedTab = event.target.closest('.tab-link');
+
+            // Se o que foi clicado não for um botão de aba, não faz nada
+            if (!clickedTab) return;
+
+            // 1. Desativa todas as abas e painéis
+            tabNav.querySelectorAll('.tab-link').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            tabPanes.forEach(pane => {
+                pane.classList.remove('active');
+            });
+
+            // 2. Ativa a aba clicada
+            clickedTab.classList.add('active');
+
+            // 3. Ativa o painel correspondente
+            const tabNumber = clickedTab.dataset.tab; // Pega o valor de data-tab (ex: "1", "2")
+            const correspondingPane = tabsContainer.querySelector(`.tab-pane[data-tab="${tabNumber}"]`);
+            if (correspondingPane) {
+                correspondingPane.classList.add('active');
+            }
+        });
+    }
+
+    // --- NOVA LÓGICA PARA O BOTÃO DE CURTIR ---
+    const commentList = document.querySelector('.comment-list');
+
+    // Usamos delegação de eventos para eficiência.
+    // O "ouvinte" fica na lista, não em cada botão individual.
+    if (commentList) {
+        commentList.addEventListener('click', (event) => {
+            const likeButton = event.target.closest('.like-button');
+
+            // Se o clique não foi em um botão de curtir, não faz nada.
+            if (!likeButton) return;
+
+            const likeCountSpan = likeButton.querySelector('.like-count');
+            let currentLikes = parseInt(likeCountSpan.textContent, 10);
+
+            // Alterna a classe 'liked'
+            likeButton.classList.toggle('liked');
+
+            // Verifica se o botão ESTÁ curtido AGORA para decidir se incrementa ou decrementa.
+            if (likeButton.classList.contains('liked')) {
+                // Se foi curtido, incrementa
+                currentLikes++;
+            } else {
+                // Se foi descurtido, decrementa
+                currentLikes--;
+            }
+
+            // Atualiza o texto do contador na tela.
+            likeCountSpan.textContent = currentLikes;
+        });
+    }
+
+    const progressBar = document.querySelector('.progress-bar');
+
+    if (progressBar) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Se a barra de progresso entrou na tela...
+                if (entry.isIntersecting) {
+                    const bar = entry.target;
+                    const progressValue = bar.dataset.progress; // Pega o valor (ex: "75")
+                    
+                    // Aplica a largura e a opacidade para iniciar a animação do CSS
+                    bar.style.width = progressValue + '%';
+                    bar.style.opacity = 1;
+
+                    // Para de observar depois que a animação foi acionada
+                    observer.unobserve(bar);
+                }
+            });
+        }, {
+            // O threshold 0.5 significa que a animação começa quando 50% do elemento estiver visível
+            threshold: 0.5 
+        });
+
+        // Começa a observar a barra de progresso
+        observer.observe(progressBar);
+    }
+    // Logica para spinner
+
+    const meuFormulario = document.getElementById('meuFormulario');
+    const btnEnviar = document.getElementById('btnEnviar');
+    const spinnerForm = document.getElementById('spinnerForm');
+
+    if (meuFormulario) {
+        meuFormulario.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            btnEnviar.disabled = true;
+            spinnerForm.classList.remove('hidden');
+
+            setTimeout(() => {
+                btnEnviar.disabled = false;
+                spinnerForm.classList.add('hidden');
+
+                alert('Formulário enviado com sucesso!');
+                meuFormulario.reset();
+            }, 2000);
+        })
+    }
+
+    /**
+     * Versão jQuery para envio do formulário com spinner no botão
+     * 
+    $(document).ready(function() {
+        $('#meuFormulario').on('submit', function(event) {
+            event.preventDefault();
+
+            // 1. Ativa o modo de carregamento
+            const $btn = $('#btnEnviar');
+            const $spinner = $('#spinnerForm');
+            $btn.prop('disabled', true);
+            $spinner.removeClass('hidden');
+
+            // 2. Simula uma operação de 2 segundos
+            setTimeout(() => {
+                // 3. Desativa o modo de carregamento
+                $btn.prop('disabled', false);
+                $spinner.addClass('hidden');
+
+                alert('Formulário enviado com sucesso!');
+                $('#meuFormulario')[0].reset();
+            }, 2000);
+        });
+    }); *******/
+
+// Você pode adicionar a lógica para outros componentes aqui (ex: Modal)
+
+    /* Lógica para o overlay de spinner na página! */
+    // window.addEventListener('load', () => {
+    //     const loader = document.getElementById('pageLoader');
+    //     const content = document.getElementById('mainContent');
+
+    //     // Simula um tempo de carregamento de 1.5 segundos
+    //     setTimeout(() => {
+    //         loader.style.opacity = '1';
+    //         // Remove o overlay depois da transição
+    //         setTimeout(() => loader.classList.add('hidden'), 300);
+
+    //         content.classList.remove('hidden');
+    //     }, 5500);
+    // });
+
+});
+</script>
+</body>
+</html>
