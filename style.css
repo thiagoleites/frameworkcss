@@ -39,7 +39,7 @@
         --color-border-gray: #555555;
         --color-background-gray: #222222;
         --color-background: #121212;
-        --color-white: #000000;
+        --color-white: #ffffff;
 
         --color-success: #4caf50;
         --color-error: #f44336;
@@ -62,6 +62,13 @@ body {
 /*     color: var(--color-graphite); */
     color: var(--color-dark);
     line-height: 1.6;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .container {
@@ -328,7 +335,12 @@ tbody tr:nth-child(even) {
 /* ---------------------------------- */
 .list-container {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
+}
+
+.list-container > div {
+    flex: 1 1 260px;
 }
 ul, ol {
     padding-left: 20px;
@@ -416,8 +428,14 @@ ul li::marker {
     text-decoration: none;
 }
 
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
 .main-nav a {
-    margin-left: 20px;
     font-size: 1rem;
     font-weight: 500;
 }
@@ -444,8 +462,10 @@ ul li::marker {
 /* ---------------------------------- */
 .form-group-inline {
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
     margin-top: 1rem;
+    align-items: center;
 }
 .custom-control {
     display: flex;
@@ -932,6 +952,7 @@ blockquote footer {
 /* Formulário para novo comentário */
 .comment-form {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     align-items: flex-start;
     margin-top: 2rem;
@@ -1187,13 +1208,30 @@ blockquote footer {
 
 /* Ocultar elementos visuais, mas manter acessível para leitores de tela */
 .hidden {
-    display: none !important;;
+    display: none !important;
 }
 
 #btnEnviar {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group-inline,
+    .list-container,
+    .comment-form {
+        flex-wrap: wrap;
+    }
+
+    .comment-form {
+        flex-direction: column;
+    }
 }
 
 /* overlay para spinner na página */

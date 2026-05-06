@@ -273,23 +273,23 @@
         <section>
             <h2>Modal Aprimorado (Versão 2.0)</h2>
             <p>Esta versão inclui melhor hierarquia, animação mais dinâmica e um efeito de fundo "vidro fosco" para um visual mais moderno.</p>
-            <button class="btn btn-primary" onclick="document.querySelector('.modal-overlay').classList.add('active')">Abrir Modal</button>
+            <button type="button" class="btn btn-primary" onclick="document.querySelector('.modal-overlay').classList.add('active')">Abrir Modal</button>
             
             <!-- O ideal é que o modal comece escondido. Adicionei a classe .active aqui APENAS para demonstração visual. -->
             <div class="modal-overlay">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h3>Confirmar Ação</h3>
-                        <button class="modal-close" title="Fechar" onclick="document.querySelector('.modal-overlay').classList.remove('active')">×</button>
+                        <button type="button" class="modal-close" title="Fechar" onclick="document.querySelector('.modal-overlay').classList.remove('active')">×</button>
                     </div>
                     <div class="modal-body">
                         <p>Tem certeza de que deseja prosseguir com esta ação? Esta operação não poderá ser desfeita.</p>
                         <p>Todos os dados associados serão permanentemente removidos.</p>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" onclick="document.querySelector('.modal-overlay').classList.remove('active')">Cancelar</button>
-                        <button class="btn btn-primary" onclick="document.querySelector('.modal-overlay').classList.remove('active')">Sim, prosseguir</button>
-                        <button class="modal-close"><span class="sr-only">Fechar Modal</span>&times;</button> <!-- exemplo a ser seguiodo para acessibilidade -->
+                        <button type="button" class="btn btn-secondary" onclick="document.querySelector('.modal-overlay').classList.remove('active')">Cancelar</button>
+                        <button type="button" class="btn btn-primary" onclick="document.querySelector('.modal-overlay').classList.remove('active')">Sim, prosseguir</button>
+                        <button type="button" class="modal-close"><span class="sr-only">Fechar Modal</span>&times;</button> <!-- exemplo a ser seguiodo para acessibilidade -->
                     </div>
                 </div>
             </div>
@@ -300,13 +300,13 @@
         <section>
             <h2>Tabs / Abas</h2>
             <div class="tabs">
-                <div class="tab-nav">
+                <div class="tab-nav" role="tablist">
                     <!-- Adicionamos data-tab="1" -->
-                    <button class="tab-link active" data-tab="1">Aba 1</button>
+                    <button class="tab-link active" data-tab="1" role="tab" aria-selected="true">Aba 1</button>
                     <!-- Adicionamos data-tab="2" -->
-                    <button class="tab-link" data-tab="2">Aba 2</button>
+                    <button class="tab-link" data-tab="2" role="tab" aria-selected="false">Aba 2</button>
                     <!-- Adicionamos data-tab="3" -->
-                    <button class="tab-link" data-tab="3">Aba 3</button>
+                    <button class="tab-link" data-tab="3" role="tab" aria-selected="false">Aba 3</button>
                 </div>
                 <div class="tab-content">
                     <!-- Adicionamos data-tab="1" -->
@@ -433,7 +433,7 @@
                 <img src="https://placehold.co/150" alt="Seu Avatar" class="avatar avatar-sm">
                 <div class="comment-input-area">
                     <textarea placeholder="Adicione um comentário..." rows="3"></textarea>
-                    <button class="btn btn-primary">Publicar</button>
+<button type="submit" class="btn btn-primary">Publicar</button>
                 </div>
             </div>
 
@@ -452,7 +452,7 @@
                             <p class="comment-text">Ótimo artigo! A base de componentes está ficando realmente completa e fácil de usar.</p>
                             <div class="comment-actions">
                                 <!-- NOVO BOTÃO DE CURTIR -->
-                                <button class="like-button">
+                                <button type="button" class="like-button">
                                     <!-- Ícone SVG de "Joinha" -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M7 10v12"/>
@@ -476,7 +476,7 @@
                                 <p class="comment-text">Concordo! O estilo escuro nos componentes dá um toque muito profissional.</p>
                                 <div class="comment-actions">
                                     <!-- NOVO BOTÃO DE CURTIR -->
-                                    <button class="like-button">
+                                    <button type="button" class="like-button">
                                         <!-- Ícone SVG de "Joinha" -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M7 10v12"/>
@@ -503,7 +503,7 @@
                             <p class="comment-text">Alguém tem uma sugestão de como integrar isso com React ou Vue?</p>
                             <div class="comment-actions">
                                 <!-- NOVO BOTÃO DE CURTIR -->
-                                <button class="like-button">
+                                <button type="button" class="like-button">
                                     <!-- Ícone SVG de "Joinha" -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M7 10v12"/>
