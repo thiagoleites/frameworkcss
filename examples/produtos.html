@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Dashboard Moderno</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="dashboard-custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="dashboard-layout">
+    
+    <!-- SIDEBAR (mesmo layout) -->
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+            <h2>📊 Dashboard</h2>
+        </div>
+        
+        <nav class="dashboard-nav">
+            <div class="nav-title">Menu Principal</div>
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 18 0A9 9 0 0 0 3 12z"/>
+                            <path d="M9 12l3 3 6-6"/>
+                        </svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="produtos.html" class="active">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        Produtos
+                    </a>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        Usuários
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="2" x2="12" y2="22"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                        Relatórios
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-title">Outras Opções</div>
+            <ul>
+                <li>
+                    <a href="configuracoes.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m6.08 0l4.24 4.24"/>
+                        </svg>
+                        Configurações
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <hr>
+            <p>v1.0.0 Beta</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+        
+        <div class="main-header-bar">
+            <div class="header-content">
+                <div>
+                    <h1>Gerenciamento de Produtos</h1>
+                    <p class="subtitle">Adicione, edite e controle seus produtos</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary">+ Novo Produto</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert de Filtro -->
+        <div class="alert alert-info mb-3">
+            <strong>ℹ️ Dica:</strong> Use os filtros abaixo para encontrar produtos específicos por categoria ou status.
+        </div>
+
+        <!-- Seção de Filtros -->
+        <section class="dashboard-section">
+            <h2>Filtros</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                <div class="form-group">
+                    <label for="filter-category">Categoria</label>
+                    <select id="filter-category">
+                        <option>Todas as categorias</option>
+                        <option>Eletrônicos</option>
+                        <option>Periféricos</option>
+                        <option>Acessórios</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filter-status">Status</label>
+                    <select id="filter-status">
+                        <option>Todos os status</option>
+                        <option>Em estoque</option>
+                        <option>Baixo estoque</option>
+                        <option>Fora de estoque</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filter-search">Buscar produto</label>
+                    <input type="text" id="filter-search" placeholder="Digite o nome do produto...">
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabela de Produtos -->
+        <section class="dashboard-section">
+            <h2>Lista de Produtos</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Categoria</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td><strong>Notebook Dell XPS 13</strong></td>
+                        <td>Eletrônicos</td>
+                        <td>R$ 4.500,00</td>
+                        <td>8</td>
+                        <td><span class="badge" style="background: var(--color-success); color: white;">Em estoque</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td><strong>Mouse Logitech MX Master</strong></td>
+                        <td>Periféricos</td>
+                        <td>R$ 349,90</td>
+                        <td>25</td>
+                        <td><span class="badge" style="background: var(--color-success); color: white;">Em estoque</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#003</td>
+                        <td><strong>Teclado Mecânico RGB</strong></td>
+                        <td>Periféricos</td>
+                        <td>R$ 499,00</td>
+                        <td>3</td>
+                        <td><span class="badge" style="background: #ff9800; color: white;">Baixo estoque</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#004</td>
+                        <td><strong>Monitor LG UltraWide</strong></td>
+                        <td>Eletrônicos</td>
+                        <td>R$ 2.499,00</td>
+                        <td>0</td>
+                        <td><span class="badge" style="background: var(--color-error); color: white;">Fora de estoque</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#005</td>
+                        <td><strong>Webcam Logitech C920</strong></td>
+                        <td>Acessórios</td>
+                        <td>R$ 349,90</td>
+                        <td>12</td>
+                        <td><span class="badge" style="background: var(--color-success); color: white;">Em estoque</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#006</td>
+                        <td><strong>Headset Gamer HyperX</strong></td>
+                        <td>Acessórios</td>
+                        <td>R$ 599,00</td>
+                        <td>15</td>
+                        <td><span class="badge" style="background: var(--color-success); color: white;">Em estoque</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Paginação -->
+        <section class="dashboard-section">
+            <nav class="pagination">
+                <a href="#" class="page-link prev">← Anterior</a>
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link">Próximo →</a>
+            </nav>
+        </section>
+
+        <!-- Cards de Resumo -->
+        <section class="dashboard-section">
+            <h2>Resumo de Produtos</h2>
+            
+            <div class="stats-grid">
+                <div class="card status-card">
+                    <div class="status-card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <div class="status-card-content">
+                        <h2>128</h2>
+                        <p class="stat-label">Total de Produtos</p>
+                    </div>
+                </div>
+
+                <div class="card status-card">
+                    <div class="status-card-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 18 0A9 9 0 0 0 3 12z"/>
+                        </svg>
+                    </div>
+                    <div class="status-card-content">
+                        <h2>98</h2>
+                        <p class="stat-label">Em Estoque</p>
+                    </div>
+                </div>
+
+                <div class="card status-card">
+                    <div class="status-card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M3 12h18"/>
+                            <path d="M3 6h18"/>
+                            <path d="M3 18h18"/>
+                        </svg>
+                    </div>
+                    <div class="status-card-content">
+                        <h2>18</h2>
+                        <p class="stat-label">Baixo Estoque</p>
+                    </div>
+                </div>
+
+                <div class="card status-card">
+                    <div class="status-card-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="16"/>
+                            <line x1="8" y1="12" x2="16" y2="12"/>
+                        </svg>
+                    </div>
+                    <div class="status-card-content">
+                        <h2>12</h2>
+                        <p class="stat-label">Fora de Estoque</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer" style="margin-top: 60px;">
+            <div class="container" style="padding: 20px;">
+                <p>&copy; 2026 Dashboard Framework CSS. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

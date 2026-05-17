@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - Dashboard Moderno</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="dashboard-custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="dashboard-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+            <h2>📊 Dashboard</h2>
+        </div>
+        
+        <nav class="dashboard-nav">
+            <div class="nav-title">Menu Principal</div>
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 18 0A9 9 0 0 0 3 12z"/>
+                            <path d="M9 12l3 3 6-6"/>
+                        </svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="produtos.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        Produtos
+                    </a>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        Usuários
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios.html" class="active">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="2" x2="12" y2="22"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                        Relatórios
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-title">Outras Opções</div>
+            <ul>
+                <li>
+                    <a href="configuracoes.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m6.08 0l4.24 4.24"/>
+                        </svg>
+                        Configurações
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <hr>
+            <p>v1.0.0 Beta</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+        
+        <div class="main-header-bar">
+            <div class="header-content">
+                <div>
+                    <h1>Relatórios e Análises</h1>
+                    <p class="subtitle">Visualize dados e gere relatórios customizados</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-primary">📥 Exportar PDF</button>
+                    <button class="btn btn-secondary">🔄 Atualizar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção de Período -->
+        <section class="dashboard-section">
+            <h2>Selecione o Período</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                <div class="form-group">
+                    <label for="data-inicio">Data Início</label>
+                    <input type="date" id="data-inicio">
+                </div>
+                <div class="form-group">
+                    <label for="data-fim">Data Fim</label>
+                    <input type="date" id="data-fim">
+                </div>
+                <div class="form-group">
+                    <label for="tipo-relatorio">Tipo de Relatório</label>
+                    <select id="tipo-relatorio">
+                        <option>Vendas</option>
+                        <option>Usuários</option>
+                        <option>Produtos</option>
+                        <option>Geral</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: flex-end;">
+                    <button class="btn btn-primary">Gerar Relatório</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção com Abas (Tabs) -->
+        <section class="dashboard-section">
+            <h2>Análise de Período</h2>
+            
+            <div class="tabs">
+                <div class="tab-nav" role="tablist">
+                    <button class="tab-link active" data-tab="1" role="tab">Vendas</button>
+                    <button class="tab-link" data-tab="2" role="tab">Crescimento</button>
+                    <button class="tab-link" data-tab="3" role="tab">Clientes</button>
+                </div>
+                <div class="tab-content">
+                    <!-- Tab 1: Vendas -->
+                    <div class="tab-pane active" data-tab="1">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 24px;">
+                            <div class="card">
+                                <h3>Vendas por Semana</h3>
+                                <ul style="list-style: none; padding: 0; margin: 1.5rem 0 0 0;">
+                                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                        <span>Semana 1</span>
+                                        <strong style="color: #667eea;">R$ 12.500</strong>
+                                    </li>
+                                    <li style="margin-bottom: 1rem;">
+                                        <div class="progress-container" style="height: 6px; margin-bottom: 0.5rem;">
+                                            <div class="progress-bar" style="width: 100%; background: #667eea;"></div>
+                                        </div>
+                                    </li>
+                                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                        <span>Semana 2</span>
+                                        <strong style="color: #43e97b;">R$ 14.800</strong>
+                                    </li>
+                                    <li style="margin-bottom: 1rem;">
+                                        <div class="progress-container" style="height: 6px; margin-bottom: 0.5rem;">
+                                            <div class="progress-bar" style="width: 115%; background: #43e97b;"></div>
+                                        </div>
+                                    </li>
+                                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                                        <span>Semana 3</span>
+                                        <strong style="color: #f093fb;">R$ 11.200</strong>
+                                    </li>
+                                    <li style="margin-bottom: 1rem;">
+                                        <div class="progress-container" style="height: 6px; margin-bottom: 0.5rem;">
+                                            <div class="progress-bar" style="width: 85%; background: #f093fb;"></div>
+                                        </div>
+                                    </li>
+                                    <li style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span>Semana 4</span>
+                                        <strong style="color: #4facfe;">R$ 6.730</strong>
+                                    </li>
+                                    <li>
+                                        <div class="progress-container" style="height: 6px; margin-bottom: 0.5rem;">
+                                            <div class="progress-bar" style="width: 50%; background: #4facfe;"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card">
+                                <h3>Resumo de Vendas</h3>
+                                <div style="margin-top: 2rem;">
+                                    <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f9fafc; border-radius: 8px;">
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-medium-gray);">Total de Vendas</p>
+                                        <h2 style="margin: 0.5rem 0 0 0; font-size: 2rem; color: #667eea;">R$ 45.230</h2>
+                                    </div>
+                                    <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f9fafc; border-radius: 8px;">
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-medium-gray);">Número de Transações</p>
+                                        <h2 style="margin: 0.5rem 0 0 0; font-size: 2rem; color: #43e97b;">542</h2>
+                                    </div>
+                                    <div style="padding: 1rem; background: #f9fafc; border-radius: 8px;">
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-medium-gray);">Ticket Médio</p>
+                                        <h2 style="margin: 0.5rem 0 0 0; font-size: 2rem; color: #f093fb;">R$ 83,47</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <h3>Top Produtos</h3>
+                                <ol style="padding-left: 20px; margin-top: 1.5rem;">
+                                    <li style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e8eef5;">
+                                        <strong>Notebook Dell XPS</strong>
+                                        <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem; color: var(--color-medium-gray);">245 vendas | R$ 856.500</p>
+                                    </li>
+                                    <li style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e8eef5;">
+                                        <strong>Monitor LG UltraWide</strong>
+                                        <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem; color: var(--color-medium-gray);">189 vendas | R$ 469.800</p>
+                                    </li>
+                                    <li style="margin-bottom: 0;">
+                                        <strong>Teclado Mecânico RGB</strong>
+                                        <p style="margin: 0.25rem 0 0 0; font-size: 0.9rem; color: var(--color-medium-gray);">156 vendas | R$ 74.400</p>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Crescimento -->
+                    <div class="tab-pane" data-tab="2">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px;">
+                            <div class="card">
+                                <h3>Crescimento Mensal</h3>
+                                <ul style="list-style: none; padding: 0; margin: 1.5rem 0 0 0;">
+                                    <li style="margin-bottom: 1.5rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Janeiro</span>
+                                            <strong>R$ 32.000</strong>
+                                        </div>
+                                        <div class="progress-container" style="height: 8px;">
+                                            <div class="progress-bar" style="width: 65%; background: #667eea;"></div>
+                                        </div>
+                                    </li>
+                                    <li style="margin-bottom: 1.5rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Fevereiro</span>
+                                            <strong>R$ 38.500</strong>
+                                        </div>
+                                        <div class="progress-container" style="height: 8px;">
+                                            <div class="progress-bar" style="width: 78%; background: #43e97b;"></div>
+                                        </div>
+                                    </li>
+                                    <li style="margin-bottom: 1.5rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Março</span>
+                                            <strong>R$ 42.200</strong>
+                                        </div>
+                                        <div class="progress-container" style="height: 8px;">
+                                            <div class="progress-bar" style="width: 85%; background: #f093fb;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Abril</span>
+                                            <strong>R$ 45.230</strong>
+                                        </div>
+                                        <div class="progress-container" style="height: 8px;">
+                                            <div class="progress-bar" style="width: 100%; background: #4facfe;"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card">
+                                <h3>Taxa de Crescimento</h3>
+                                <div style="margin-top: 2rem;">
+                                    <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f0fff4; border-left: 4px solid var(--color-success); border-radius: 4px;">
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-dark-gray);">Janeiro → Fevereiro</p>
+                                        <h2 style="margin: 0.5rem 0 0 0; font-size: 1.75rem; color: var(--color-success);">+20.3%</h2>
+                                    </div>
+                                    <div style="margin-bottom: 1.5rem; padding: 1rem; background: #f0fff4; border-left: 4px solid var(--color-success); border-radius: 4px;">
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-dark-gray);">Fevereiro → Março</p>
+                                        <h2 style="margin: 0.5rem 0 0 0; font-size: 1.75rem; color: var(--color-success);">+9.6%</h2>
+                                    </div>
+                                    <div style="padding: 1rem; background: #f0fff4; border-left: 4px solid var(--color-success); border-radius: 4px;">
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-dark-gray);">Março → Abril</p>
+                                        <h2 style="margin: 0.5rem 0 0 0; font-size: 1.75rem; color: var(--color-success);">+7.1%</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Clientes -->
+                    <div class="tab-pane" data-tab="3">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px;">
+                            <div class="card">
+                                <h3>Clientes por Região</h3>
+                                <ul style="list-style: none; padding: 0; margin: 1.5rem 0 0 0;">
+                                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
+                                        <span>Sudeste</span>
+                                        <strong style="color: var(--color-dark);">1.248 clientes (48%)</strong>
+                                    </li>
+                                    <li style="margin-bottom: 1rem;">
+                                        <div class="progress-container" style="height: 6px;">
+                                            <div class="progress-bar" style="width: 100%; background: #667eea;"></div>
+                                        </div>
+                                    </li>
+                                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
+                                        <span>Sul</span>
+                                        <strong style="color: var(--color-dark);">624 clientes (24%)</strong>
+                                    </li>
+                                    <li style="margin-bottom: 1rem;">
+                                        <div class="progress-container" style="height: 6px;">
+                                            <div class="progress-bar" style="width: 50%; background: #43e97b;"></div>
+                                        </div>
+                                    </li>
+                                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
+                                        <span>Nordeste</span>
+                                        <strong style="color: var(--color-dark);">416 clientes (16%)</strong>
+                                    </li>
+                                    <li style="margin-bottom: 1rem;">
+                                        <div class="progress-container" style="height: 6px;">
+                                            <div class="progress-bar" style="width: 33%; background: #f093fb;"></div>
+                                        </div>
+                                    </li>
+                                    <li style="display: flex; justify-content: space-between;">
+                                        <span>Centro-Oeste</span>
+                                        <strong style="color: var(--color-dark);">208 clientes (12%)</strong>
+                                    </li>
+                                    <li>
+                                        <div class="progress-container" style="height: 6px;">
+                                            <div class="progress-bar" style="width: 25%; background: #4facfe;"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card">
+                                <h3>Satisfação de Clientes</h3>
+                                <div style="margin-top: 2rem; text-align: center;">
+                                    <div style="margin-bottom: 2rem;">
+                                        <h2 style="margin: 0; font-size: 3rem; color: #667eea;">4.8</h2>
+                                        <p style="margin: 0.5rem 0 0 0; color: var(--color-medium-gray);">de 5 estrelas</p>
+                                        <div style="margin-top: 1rem;">
+                                            <span style="font-size: 1.5rem;">⭐⭐⭐⭐⭐</span>
+                                        </div>
+                                    </div>
+                                    <p style="color: var(--color-graphite); margin: 0;">Baseado em 2.496 avaliações</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accordion com Detalhes -->
+        <section class="dashboard-section">
+            <h2>Detalhes Adicionais</h2>
+            
+            <div class="accordion">
+                <details>
+                    <summary>📊 Metodologia dos Cálculos</summary>
+                    <div class="accordion-content">
+                        <p>Os dados são calculados com base em:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>Transações completas no período</li>
+                            <li>Valores ajustados para devoluções</li>
+                            <li>Custos operacionais inclusos</li>
+                        </ul>
+                    </div>
+                </details>
+                <details>
+                    <summary>💾 Como Exportar Relatórios</summary>
+                    <div class="accordion-content">
+                        <p>Você pode exportar relatórios nos seguintes formatos:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>PDF - Para visualização e impressão</li>
+                            <li>Excel - Para análise e manipulação de dados</li>
+                            <li>CSV - Para integração com outros sistemas</li>
+                        </ul>
+                    </div>
+                </details>
+                <details>
+                    <summary>🔔 Agendamento de Relatórios</summary>
+                    <div class="accordion-content">
+                        <p>Agende relatórios automáticos para receber:</p>
+                        <ul style="padding-left: 20px;">
+                            <li>Diariamente - Às 8:00 AM</li>
+                            <li>Semanalmente - Toda segunda-feira</li>
+                            <li>Mensalmente - Primeiro dia do mês</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <footer class="main-footer" style="margin-top: 60px;">
+            <div class="container" style="padding: 20px;">
+                <p>&copy; 2026 Dashboard Framework CSS. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

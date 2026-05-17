@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - Dashboard Moderno</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="dashboard-custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="dashboard-layout">
+    
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+            <h2>📊 Dashboard</h2>
+        </div>
+        
+        <nav class="dashboard-nav">
+            <div class="nav-title">Menu Principal</div>
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 18 0A9 9 0 0 0 3 12z"/>
+                            <path d="M9 12l3 3 6-6"/>
+                        </svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="produtos.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        Produtos
+                    </a>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        Usuários
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="2" x2="12" y2="22"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                        Relatórios
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-title">Outras Opções</div>
+            <ul>
+                <li>
+                    <a href="configuracoes.html" class="active">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m6.08 0l4.24 4.24"/>
+                        </svg>
+                        Configurações
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <hr>
+            <p>v1.0.0 Beta</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+        
+        <div class="main-header-bar">
+            <div class="header-content">
+                <div>
+                    <h1>Configurações do Sistema</h1>
+                    <p class="subtitle">Gerencie preferências e configurações gerais</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert -->
+        <div class="alert alert-info mb-3">
+            <strong>ℹ️ Informação:</strong> Alterações nas configurações serão aplicadas imediatamente ao salvar.
+        </div>
+
+        <!-- Tabs com Configurações -->
+        <section class="dashboard-section">
+            <div class="tabs">
+                <div class="tab-nav" role="tablist">
+                    <button class="tab-link active" data-tab="1" role="tab">Perfil</button>
+                    <button class="tab-link" data-tab="2" role="tab">Aparência</button>
+                    <button class="tab-link" data-tab="3" role="tab">Notificações</button>
+                    <button class="tab-link" data-tab="4" role="tab">Segurança</button>
+                </div>
+                <div class="tab-content">
+                    
+                    <!-- Tab 1: Perfil -->
+                    <div class="tab-pane active" data-tab="1">
+                        <div style="max-width: 600px; margin-top: 24px;">
+                            <h3>Informações do Perfil</h3>
+                            
+                            <div class="form-group">
+                                <label for="nome-completo">Nome Completo</label>
+                                <input type="text" id="nome-completo" value="João Silva" placeholder="Seu nome completo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" value="joao@exemplo.com" placeholder="seu.email@exemplo.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" value="(11) 98765-4321" placeholder="(11) 9XXXX-XXXX">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="empresa">Empresa</label>
+                                <input type="text" id="empresa" value="Tech Solutions" placeholder="Nome da sua empresa">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="funcao">Função</label>
+                                <select id="funcao">
+                                    <option selected>Administrador</option>
+                                    <option>Gerente</option>
+                                    <option>Vendedor</option>
+                                    <option>Editor</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bio">Biografia</label>
+                                <textarea id="bio" rows="4" placeholder="Conte um pouco sobre você...">Profissional com 5 anos de experiência em desenvolvimento web.</textarea>
+                            </div>
+
+                            <button class="btn btn-primary">💾 Salvar Alterações</button>
+                            <button class="btn btn-secondary">❌ Cancelar</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Aparência -->
+                    <div class="tab-pane" data-tab="2">
+                        <div style="max-width: 600px; margin-top: 24px;">
+                            <h3>Preferências de Aparência</h3>
+                            
+                            <div class="form-group">
+                                <label>Tema</label>
+                                <div class="form-group-inline">
+                                    <div class="custom-control">
+                                        <input type="radio" id="theme-light" name="theme" checked>
+                                        <label for="theme-light">Claro</label>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="radio" id="theme-dark" name="theme">
+                                        <label for="theme-dark">Escuro</label>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="radio" id="theme-auto" name="theme">
+                                        <label for="theme-auto">Automático</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tamanho de Fonte</label>
+                                <div class="form-group-inline">
+                                    <div class="custom-control">
+                                        <input type="radio" id="font-small" name="font-size">
+                                        <label for="font-small">Pequeno</label>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="radio" id="font-normal" name="font-size" checked>
+                                        <label for="font-normal">Normal</label>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="radio" id="font-large" name="font-size">
+                                        <label for="font-large">Grande</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Cor do Tema Primário</label>
+                                <input type="color" value="#667eea" style="width: 50px; height: 40px; border: 1px solid var(--color-border-gray); border-radius: 6px; cursor: pointer;">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Densidade do Layout</label>
+                                <div class="form-group-inline">
+                                    <div class="custom-control">
+                                        <input type="radio" id="density-compact" name="density">
+                                        <label for="density-compact">Compacto</label>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="radio" id="density-normal" name="density" checked>
+                                        <label for="density-normal">Normal</label>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="radio" id="density-espaçoso" name="density">
+                                        <label for="density-espaçoso">Espaçoso</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary">💾 Salvar Preferências</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Notificações -->
+                    <div class="tab-pane" data-tab="3">
+                        <div style="max-width: 600px; margin-top: 24px;">
+                            <h3>Configurações de Notificações</h3>
+                            
+                            <div style="border: 1px solid #e8eef5; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <div>
+                                        <h4 style="margin: 0 0 4px 0;">Notificações por Email</h4>
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-medium-gray);">Receba atualizações por email</p>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="checkbox" id="email-notif" checked>
+                                        <label for="email-notif"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="border: 1px solid #e8eef5; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <div>
+                                        <h4 style="margin: 0 0 4px 0;">Notificações de Pedidos</h4>
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-medium-gray);">Seja notificado sobre novos pedidos</p>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="checkbox" id="orders-notif" checked>
+                                        <label for="orders-notif"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="border: 1px solid #e8eef5; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <div>
+                                        <h4 style="margin: 0 0 4px 0;">Notificações de Vendas</h4>
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-medium-gray);">Alertas sobre metas e desempenho</p>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="checkbox" id="sales-notif" checked>
+                                        <label for="sales-notif"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="border: 1px solid #e8eef5; border-radius: 8px; padding: 16px; margin-bottom: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <div>
+                                        <h4 style="margin: 0 0 4px 0;">Notificações de Segurança</h4>
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-medium-gray);">Alertas críticos de segurança</p>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="checkbox" id="security-notif" checked>
+                                        <label for="security-notif"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="border: 1px solid #e8eef5; border-radius: 8px; padding: 16px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div>
+                                        <h4 style="margin: 0 0 4px 0;">Newsletter</h4>
+                                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-medium-gray);">Receba our newsletter semanal</p>
+                                    </div>
+                                    <div class="custom-control">
+                                        <input type="checkbox" id="newsletter" checked>
+                                        <label for="newsletter"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 24px;">
+                                <button class="btn btn-primary">💾 Salvar Notificações</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Segurança -->
+                    <div class="tab-pane" data-tab="4">
+                        <div style="max-width: 600px; margin-top: 24px;">
+                            <h3>Configurações de Segurança</h3>
+                            
+                            <div style="margin-bottom: 2rem;">
+                                <h4 style="margin: 0 0 1rem 0;">Alterar Senha</h4>
+                                <div class="form-group">
+                                    <label for="senha-atual">Senha Atual</label>
+                                    <input type="password" id="senha-atual" placeholder="Digite sua senha atual">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senha-nova">Nova Senha</label>
+                                    <input type="password" id="senha-nova" placeholder="Digite a nova senha">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senha-confirma">Confirmar Senha</label>
+                                    <input type="password" id="senha-confirma" placeholder="Confirme a nova senha">
+                                </div>
+
+                                <button class="btn btn-primary">🔒 Alterar Senha</button>
+                            </div>
+
+                            <hr>
+
+                            <div style="margin-top: 2rem;">
+                                <h4 style="margin: 0 0 1rem 0;">Autenticação em Duas Etapas</h4>
+                                <p style="color: var(--color-medium-gray); margin-bottom: 1rem;">Adicione uma camada extra de segurança à sua conta.</p>
+                                
+                                <div class="alert alert-success" style="margin-bottom: 1rem;">
+                                    <strong>✓ Ativo</strong> Sua autenticação em duas etapas está habilitada.
+                                </div>
+
+                                <button class="btn btn-secondary">⚙️ Gerenciar 2FA</button>
+                            </div>
+
+                            <hr>
+
+                            <div style="margin-top: 2rem;">
+                                <h4 style="margin: 0 0 1rem 0;">Sessões Ativas</h4>
+                                <p style="color: var(--color-medium-gray); margin-bottom: 1rem;">Gerencie seus dispositivos conectados.</p>
+                                
+                                <div style="border: 1px solid #e8eef5; border-radius: 8px; padding: 12px; margin-bottom: 12px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <p style="margin: 0; font-weight: 600;">Chrome no Windows</p>
+                                            <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: var(--color-medium-gray);">Último acesso: Hoje, 10:30 AM</p>
+                                        </div>
+                                        <button class="btn btn-secondary btn-sm">Desconectar</button>
+                                    </div>
+                                </div>
+
+                                <div style="border: 1px solid #e8eef5; border-radius: 8px; padding: 12px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <p style="margin: 0; font-weight: 600;">Safari no macOS</p>
+                                            <p style="margin: 4px 0 0 0; font-size: 0.85rem; color: var(--color-medium-gray);">Último acesso: 2 horas atrás</p>
+                                        </div>
+                                        <button class="btn btn-secondary btn-sm">Desconectar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accordion com Mais Opções -->
+        <section class="dashboard-section">
+            <h2>Mais Opções</h2>
+            
+            <div class="accordion">
+                <details>
+                    <summary>📥 Fazer Backup de Dados</summary>
+                    <div class="accordion-content">
+                        <p>Faça download de todos os seus dados para backup local.</p>
+                        <button class="btn btn-secondary">📥 Baixar Backup</button>
+                    </div>
+                </details>
+                <details>
+                    <summary>🗑️ Deletar Conta</summary>
+                    <div class="accordion-content">
+                        <p style="color: var(--color-error); margin-bottom: 1rem;"><strong>⚠️ Atenção:</strong> Esta ação é irreversível e removerá todos os seus dados.</p>
+                        <button class="btn btn-secondary" style="background: var(--color-error); color: white; border: none;">🗑️ Deletar Minha Conta</button>
+                    </div>
+                </details>
+                <details>
+                    <summary>ℹ️ Sobre o Sistema</summary>
+                    <div class="accordion-content">
+                        <p><strong>Versão:</strong> 1.0.0 Beta</p>
+                        <p><strong>Última Atualização:</strong> 15 de maio de 2026</p>
+                        <p><strong>Desenvolvedor:</strong> Framework CSS Dashboard</p>
+                        <p><a href="#">Leia as notas da versão</a></p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <footer class="main-footer" style="margin-top: 60px;">
+            <div class="container" style="padding: 20px;">
+                <p>&copy; 2026 Dashboard Framework CSS. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

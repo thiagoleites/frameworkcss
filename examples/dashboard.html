@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Moderno - Framework CSS</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="dashboard-custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="dashboard-layout">
+    
+    <!-- ========== SIDEBAR ========== -->
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+            <h2>📊 Dashboard</h2>
+        </div>
+        
+        <nav class="dashboard-nav">
+            <div class="nav-title">Menu Principal</div>
+            <ul>
+                <li>
+                    <a href="#" class="active">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 1 0 18 0A9 9 0 0 0 3 12z"/>
+                            <path d="M9 12l3 3 6-6"/>
+                        </svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="produtos.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        Produtos
+                    </a>
+                </li>
+                <li>
+                    <a href="usuarios.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        Usuários
+                    </a>
+                </li>
+                <li>
+                    <a href="relatorios.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="2" x2="12" y2="22"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                        Relatórios
+                    </a>
+                </li>
+            </ul>
+
+            <div class="nav-title">Outras Opções</div>
+            <ul>
+                <li>
+                    <a href="configuracoes.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m6.08 0l4.24 4.24"/>
+                        </svg>
+                        Configurações
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <hr>
+            <p>v1.0.0 Beta</p>
+        </div>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="dashboard-main">
+        
+        <!-- Header bar com usuário -->
+        <div class="main-header-bar">
+            <div class="header-content">
+                <div>
+                    <h1>Bem-vindo ao Dashboard</h1>
+                    <p class="subtitle">Seu painel de controle em tempo real</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">🔔 Notificações</button>
+                    <div class="user-profile">
+                        <img src="https://placehold.co/40" alt="Avatar do usuário" class="avatar avatar-sm">
+                        <span>João Silva</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert de Boas-vindas -->
+        <div class="alert alert-info mb-3">
+            <strong>ℹ️ Bem-vindo!</strong> Este é um dashboard moderno criado com o framework CSS. Explore todos os componentes disponíveis.
+        </div>
+
+        <!-- ========== SEÇÃO 1: ESTATÍSTICAS ========== -->
+        <section class="dashboard-section">
+            <h2>Estatísticas Gerais</h2>
+            
+            <div class="stats-grid">
+                <!-- Card 1: Total de Vendas -->
+                <div class="card status-card">
+                    <div class="status-card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <line x1="12" y1="2" x2="12" y2="22"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <div class="status-card-content">
+                        <h2>R$ 45.230,00</h2>
+                        <p class="stat-label">Total de Vendas</p>
+                        <span class="badge">↑ 12% vs mês anterior</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Novos Clientes -->
+                <div class="card status-card">
+                    <div class="status-card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <div class="status-card-content">
+                        <h2>1.248</h2>
+                        <p class="stat-label">Novos Clientes</p>
+                        <span class="badge">↑ 8% vs mês anterior</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Pedidos Pendentes -->
+                <div class="card status-card">
+                    <div class="status-card-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                    </div>
+                    <div class="status-card-content">
+                        <h2>42</h2>
+                        <p class="stat-label">Pedidos Pendentes</p>
+                        <span class="badge" style="background: #ff6b6b;">⚠ Atenção</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Taxa de Conversão -->
+                <div class="card status-card">
+                    <div class="status-card-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                    </div>
+                    <div class="status-card-content">
+                        <h2>3.24%</h2>
+                        <p class="stat-label">Taxa de Conversão</p>
+                        <span class="badge">↑ 0.5% vs mês anterior</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO 2: PROGRESSO E INDICADORES ========== -->
+        <section class="dashboard-section">
+            <h2>Indicadores de Performance</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                <!-- Card com Barra de Progresso -->
+                <div class="card">
+                    <h3>Meta de Vendas - Junho</h3>
+                    <p style="color: var(--color-medium-gray); margin-bottom: 1.5rem;">Progresso: R$ 35.000 de R$ 50.000</p>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-progress="70"></div>
+                    </div>
+                    <p style="text-align: right; margin-top: 0.5rem; color: var(--color-dark); font-weight: 600;">70%</p>
+                </div>
+
+                <!-- Card com Spinner (Carregando) -->
+                <div class="card">
+                    <h3>Sincronizando Dados</h3>
+                    <p style="color: var(--color-medium-gray); margin-bottom: 2rem;">Aguarde enquanto atualizamos as informações...</p>
+                    <div style="display: flex; justify-content: center; gap: 1rem;">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+
+                <!-- Card com Skeleton (Carregando) -->
+                <div class="card skeleton">
+                    <div class="skeleton-line skeleton-title"></div>
+                    <div class="skeleton-line skeleton-subtitle"></div>
+                    <div class="skeleton-line skeleton-text"></div>
+                    <div class="skeleton-line skeleton-text"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO 3: TABS COM CONTEÚDO ========== -->
+        <section class="dashboard-section">
+            <h2>Gerenciamento de Atividades</h2>
+            
+            <div class="tabs">
+                <div class="tab-nav" role="tablist">
+                    <button class="tab-link active" data-tab="1" role="tab" aria-selected="true">Últimas Transações</button>
+                    <button class="tab-link" data-tab="2" role="tab" aria-selected="false">Pedidos em Andamento</button>
+                    <button class="tab-link" data-tab="3" role="tab" aria-selected="false">Análises</button>
+                </div>
+                <div class="tab-content">
+                    <!-- Tab 1: Últimas Transações -->
+                    <div class="tab-pane active" data-tab="1">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Cliente</th>
+                                    <th>Produto</th>
+                                    <th>Valor</th>
+                                    <th>Status</th>
+                                    <th>Data</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#1001</td>
+                                    <td>Maria Santos</td>
+                                    <td>Notebook Dell</td>
+                                    <td>R$ 3.500,00</td>
+                                    <td><span class="badge" style="background: var(--color-success); color: white;">Concluído</span></td>
+                                    <td>15/05/2026</td>
+                                </tr>
+                                <tr>
+                                    <td>#1002</td>
+                                    <td>João Costa</td>
+                                    <td>Mouse Logitech</td>
+                                    <td>R$ 89,90</td>
+                                    <td><span class="badge" style="background: var(--color-success); color: white;">Concluído</span></td>
+                                    <td>14/05/2026</td>
+                                </tr>
+                                <tr>
+                                    <td>#1003</td>
+                                    <td>Ana Silva</td>
+                                    <td>Teclado Mecânico</td>
+                                    <td>R$ 450,00</td>
+                                    <td><span class="badge" style="background: #ff9800; color: white;">Processando</span></td>
+                                    <td>13/05/2026</td>
+                                </tr>
+                                <tr>
+                                    <td>#1004</td>
+                                    <td>Pedro Oliveira</td>
+                                    <td>Monitor LG</td>
+                                    <td>R$ 1.200,00</td>
+                                    <td><span class="badge" style="background: var(--color-info); color: white;">Aguardando</span></td>
+                                    <td>12/05/2026</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Tab 2: Pedidos em Andamento -->
+                    <div class="tab-pane" data-tab="2">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                            <div class="card">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                    <h3>Pedido #1003</h3>
+                                    <span class="badge" style="background: #ff9800; color: white;">Em Processo</span>
+                                </div>
+                                <p><strong>Cliente:</strong> Ana Silva</p>
+                                <p><strong>Produto:</strong> Teclado Mecânico RGB</p>
+                                <p><strong>Valor:</strong> R$ 450,00</p>
+                                <p style="margin-bottom: 1.5rem;"><strong>Data:</strong> 13/05/2026</p>
+                                <p style="font-size: 0.9rem; color: var(--color-medium-gray); margin-bottom: 1rem;">Estimado para entrega em 18/05/2026</p>
+                                <button class="btn btn-primary btn-sm">Rastrear Pedido</button>
+                            </div>
+
+                            <div class="card">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                    <h3>Pedido #1004</h3>
+                                    <span class="badge" style="background: var(--color-info); color: white;">Aguardando Envio</span>
+                                </div>
+                                <p><strong>Cliente:</strong> Pedro Oliveira</p>
+                                <p><strong>Produto:</strong> Monitor LG UltraWide</p>
+                                <p><strong>Valor:</strong> R$ 1.200,00</p>
+                                <p style="margin-bottom: 1.5rem;"><strong>Data:</strong> 12/05/2026</p>
+                                <p style="font-size: 0.9rem; color: var(--color-medium-gray); margin-bottom: 1rem;">Será enviado em 16/05/2026</p>
+                                <button class="btn btn-primary btn-sm">Confirmar Envio</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Análises -->
+                    <div class="tab-pane" data-tab="3">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                            <div class="card">
+                                <h3>Vendas por Categoria</h3>
+                                <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
+                                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
+                                        <span>Eletrônicos</span>
+                                        <strong style="color: var(--color-dark);">45%</strong>
+                                    </li>
+                                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
+                                        <span>Periféricos</span>
+                                        <strong style="color: var(--color-dark);">30%</strong>
+                                    </li>
+                                    <li style="margin-bottom: 1rem; display: flex; justify-content: space-between;">
+                                        <span>Acessórios</span>
+                                        <strong style="color: var(--color-dark);">15%</strong>
+                                    </li>
+                                    <li style="display: flex; justify-content: space-between;">
+                                        <span>Outros</span>
+                                        <strong style="color: var(--color-dark);">10%</strong>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card">
+                                <h3>Estatísticas Mensais</h3>
+                                <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
+                                    <li style="margin-bottom: 1.5rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Abril</span>
+                                            <strong>R$ 38.500</strong>
+                                        </div>
+                                        <div class="progress-container" style="height: 8px;">
+                                            <div class="progress-bar" style="width: 70%; background: #667eea;"></div>
+                                        </div>
+                                    </li>
+                                    <li style="margin-bottom: 1.5rem;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                            <span>Maio</span>
+                                            <strong>R$ 45.230</strong>
+                                        </div>
+                                        <div class="progress-container" style="height: 8px;">
+                                            <div class="progress-bar" style="width: 85%; background: #43e97b;"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO 4: ACCORDION ========== -->
+        <section class="dashboard-section">
+            <h2>Perguntas Frequentes</h2>
+            
+            <div class="accordion">
+                <details>
+                    <summary>Como posso integrar esse dashboard com meu sistema?</summary>
+                    <div class="accordion-content">
+                        <p>O dashboard foi criado com HTML5 semântico e CSS puro, facilitando a integração com qualquer framework ou CMS. Você pode customizar cores, fontes e componentes diretamente no CSS.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Qual é a melhor forma de usar este framework?</summary>
+                    <div class="accordion-content">
+                        <p>Recomendamos usar o arquivo <code>style.css</code> como base para todos os seus projetos. Você pode estender com arquivos CSS específicos para cada página, como fazemos com <code>dashboard-custom.css</code>.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>O framework é responsivo?</summary>
+                    <div class="accordion-content">
+                        <p>Sim! Todos os componentes foram desenvolvidos com mobile-first em mente. Utilize media queries para ajustes em diferentes tamanhos de tela.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO 5: MODAL E BOTÕES ========== -->
+        <section class="dashboard-section">
+            <h2>Ações Rápidas</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                <button class="btn btn-primary" onclick="document.querySelector('.modal-overlay').classList.add('active')">Abrir Modal</button>
+                <button class="btn btn-secondary">Ver Mais Detalhes</button>
+                <button class="btn btn-secondary">Exportar Relatório</button>
+                <button class="btn btn-secondary" data-tooltip="Clique aqui para gerar um novo código">Gerar Código</button>
+            </div>
+        </section>
+
+        <!-- ========== SEÇÃO 6: COMENTÁRIOS ========== -->
+        <section class="dashboard-section">
+            <h2>Comentários Recentes (3)</h2>
+
+            <div class="comment-form">
+                <img src="https://placehold.co/40" alt="Seu Avatar" class="avatar avatar-sm">
+                <div class="comment-input-area">
+                    <textarea placeholder="Adicione um comentário sobre o dashboard..."></textarea>
+                    <button type="submit" class="btn btn-primary">Publicar</button>
+                </div>
+            </div>
+
+            <div class="comment-list">
+                <!-- Comentário #1 -->
+                <div class="comment-thread">
+                    <div class="comment">
+                        <img src="https://placehold.co/40" alt="Avatar" class="avatar avatar-sm">
+                        <div class="comment-body">
+                            <div class="comment-header">
+                                <span class="comment-author">Carlos Mendes</span>
+                                <span class="comment-timestamp">2 horas atrás</span>
+                            </div>
+                            <p class="comment-text">Excelente framework! Muito bem estruturado e fácil de customizar. Já estou usando em meus projetos!</p>
+                            <div class="comment-actions">
+                                <button type="button" class="like-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 10v12"/>
+                                        <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h3z"/>
+                                    </svg>
+                                    <span class="like-count">24</span>
+                                </button>
+                                <a href="#">Responder</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comentário #2 -->
+                <div class="comment-thread">
+                    <div class="comment">
+                        <img src="https://placehold.co/40" alt="Avatar" class="avatar avatar-sm">
+                        <div class="comment-body">
+                            <div class="comment-header">
+                                <span class="comment-author">Fernanda Rocha</span>
+                                <span class="comment-timestamp">5 horas atrás</span>
+                            </div>
+                            <p class="comment-text">O design é limpo e profissional. Adorei o uso de variáveis CSS e a modularidade do código.</p>
+                            <div class="comment-actions">
+                                <button type="button" class="like-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 10v12"/>
+                                        <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h3z"/>
+                                    </svg>
+                                    <span class="like-count">18</span>
+                                </button>
+                                <a href="#">Responder</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comentário #3 -->
+                <div class="comment-thread">
+                    <div class="comment">
+                        <img src="https://placehold.co/40" alt="Avatar" class="avatar avatar-sm">
+                        <div class="comment-body">
+                            <div class="comment-header">
+                                <span class="comment-author">Bruno Alves</span>
+                                <span class="comment-timestamp">1 dia atrás</span>
+                            </div>
+                            <p class="comment-text">Perfeito para aprender web design! Os componentes cobrem tudo que precisamos para um dashboard completo.</p>
+                            <div class="comment-actions">
+                                <button type="button" class="like-button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M7 10v12"/>
+                                        <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h3z"/>
+                                    </svg>
+                                    <span class="like-count">32</span>
+                                </button>
+                                <a href="#">Responder</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="main-footer" style="margin-top: 60px;">
+            <div class="container" style="padding: 20px;">
+                <p>&copy; 2026 Dashboard Framework CSS. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Suporte</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+</div>
+
+<!-- ========== MODAL ========== -->
+<div class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Criar Novo Projeto</h3>
+            <button type="button" class="modal-close" title="Fechar" onclick="document.querySelector('.modal-overlay').classList.remove('active')">×</button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="project-name">Nome do Projeto</label>
+                    <input type="text" id="project-name" placeholder="Digite o nome do seu projeto">
+                </div>
+                <div class="form-group">
+                    <label for="project-desc">Descrição</label>
+                    <textarea id="project-desc" rows="4" placeholder="Descreva seu projeto..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="project-type">Tipo de Projeto</label>
+                    <select id="project-type">
+                        <option>Selecione o tipo</option>
+                        <option>Website</option>
+                        <option>Aplicação Web</option>
+                        <option>Dashboard</option>
+                        <option>E-commerce</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="document.querySelector('.modal-overlay').classList.remove('active')">Cancelar</button>
+            <button type="button" class="btn btn-primary" onclick="document.querySelector('.modal-overlay').classList.remove('active'); alert('Projeto criado com sucesso!')">Criar Projeto</button>
+        </div>
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
